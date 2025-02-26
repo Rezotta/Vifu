@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;900&display=swap" rel="stylesheet">
+  <title>Vifu Checker</title>
+</head>
+<body>  
+  <div class="preloader" id="preloader">
+    <div class="loader" id="loader-site"></div>
+  </div>
+
+  <div class="wrapper" id="wrapper">
+    <header class="header">
+        <nav class="nav-block">
+            <button class="blue-button" id="BtnLang">
+                <h4 class="h4-text-button" id="text-lang-button">EN</h4> 
+            </button>
+            <h1 class="logo">Vifu Checker</h1> 
+        </nav>
+    </header>
+    <main class="main">
+        <div class="block-main">
+            <div class="container-form">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <h2 class="h2-text-form">Загрузите файл для проверки на вирусы</h2>
+                    <h4 class="h4-text-form fade show" id="fileName">Выберите файл для загрузки:</h4>
+
+                    <label class="file-input"> загрузить файл<input type="file" name="file" id="file" required></label>
+
+                    <button type="submit" id="upload-button">Проверить</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <h2 class="h2-text-footer-cop">© 2024 Vifu Checker. Все права защищены.</h2> 
+        <h4 class="h4-text-footer-about"><a href="tel:+79959544213" class="about-link">Позвонить: +7 (123) 456-78-90</a></h4>
+        <h4 class="h4-text-footer-about"><a href="mailto:VifuChecker@gmail.com" class="about-link">Написать нам: VifuChecker@gmail.com</a></h4>
+    </footer>
+  </div>
+  <div class="loader" id="loader"></div>
+  <div class="overlay" id="overlay"></div>
+
+  <div id="resultModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <div id="resultContent">
+        <h3 class="h3-text-res-form">Кол-во антивирусов считают что:</h3>
+        <p class="p-res-form">файл опасен: <span id="maliciousCount" style="color: rgb(221, 0, 0);"></span></p>
+        <p class="p-res-form">файл подозрительный: <span id="suspiciousCount" style="color: rgb(196, 199, 0);"></span></p>
+        <p class="p-res-form">файл безопасен: <span id="harmlessCount" style="color: rgb(0, 197, 66);"></span></p>
+        <p class="p-res-form"><span id="isSafeMessage"></span></p>
+        <button class="blue-button button-close" id="btn-close-modal" >
+          <h4 class="h4-text-button" id="text-closeModal">Закрыть</h4> 
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

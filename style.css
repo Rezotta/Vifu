@@ -1,0 +1,334 @@
+/* настройка базовых стилей */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: "Rubik";
+  background-color: #f3f4f6;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slide-down 0.8s forwards;
+}
+
+/* Анимация появления заголовка */
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  width: 100%;
+  min-height: 50px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  line-height: 0;
+  animation: slide-up 1s forwards;
+}
+
+/* Прелоадер */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  z-index: 888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #0077ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Стили для логотипа */
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  margin-left: 70px;
+}
+
+.blue-button {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.blue-button:hover {
+  transition: background-color 300ms;
+  background-color: #0063ce;
+}
+
+#BtnLang {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 15px 70px 0 0;
+}
+
+.h4-text-button {
+  margin: 0;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.block-main {
+  text-align: center;
+}
+
+/* Анимация появления основного блока */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Стили заголовков в форме */
+.h2-text-form {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.h4-text-form {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 0;
+}
+
+.container-form {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Скрытие стандартного поля загрузки файла */
+#file {
+  display: none;
+}
+
+/* Стили для кнопки загрузки файла */
+.file-input {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #eee;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.file-input:hover {
+  background-color: #ddd;
+}
+.file-name {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.fade {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.fade.show {
+  opacity: 1;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+#loader {
+  display: none;
+}
+
+#upload-button {
+  padding: 12px 30px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#upload-button:hover {
+  background-color: #0069d9;
+}
+
+.h2-text-footer-cop {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.h4-text-footer-about {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 20px;
+  }
+
+  #BtnLang {
+    margin-right: 20px;
+  }
+
+  .container-form {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  width: auto;
+  height: auto;
+  max-width: 550px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 20px 30px 20px 30px;
+  border-radius: 5px;
+}
+
+.close {
+  color: #007bff;
+  font-size: 28px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0px 10px 0px 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.close:hover,
+.close:focus {
+  transition: color 500ms;
+  color: #0063ce;
+  text-decoration: none;
+}
+
+.btn-close-modal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.h3-text-res-form {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.p-res-form {
+  font-size: 18px;
+  font-weight: 400;
+}
