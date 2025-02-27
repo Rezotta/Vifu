@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
   setTimeout(() => {
     preloader.style.display = "none";
     loaderSite.style.display = "none";
-  }, 1000); // Задержка должна соответствовать времени перехода
+  }, 1000);
 });
 
 // Объект с языковыми кодами
