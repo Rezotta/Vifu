@@ -4,7 +4,6 @@ window.addEventListener("load", function () {
 
   setTimeout(() => {
     preloader.style.display = "none";
-    preloader.style.opacity = "0";
     loaderSite.style.display = "none";
   }, 1000); // Задержка должна соответствовать времени перехода
 });
